@@ -21,3 +21,9 @@ The choice of having different versions of the board is due to the need to simul
 
 ### Operating system and configuration
 Raspberry Pi OS operating system with Kernel 4 version is installed on all the boards that make up the cluster.
+
+### Current Projects and status
+
+* Kubernetes (work in progress)
+* Ethereum (work in progress)
+* Dapr (work in progress)
