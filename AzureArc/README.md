@@ -1,6 +1,6 @@
 The azure-cli deb package does not support ARM64 architecture, so we need to user **Docker** as a workaround.
 
-# Docker install
+## Docker install
 
 ```sudo apt-get install apt-transport-https ca-certificates software-properties-common -y```
 
@@ -14,15 +14,15 @@ reboot the system, than
 
 ```nano /etc/apt/sources.list```
 
-Add the following line and save:   
+add the following line and save:   
 
-```deb https://download.docker.com/linux/raspbian/ stretch stable```
+*deb https://download.docker.com/linux/raspbian/ stretch stable*
 
 ```sudo apt-get update```
 
 ```sudo apt-get upgrade```
 
-# Azure cli
+## Azure CLI
 
 ```sudo docker run -it --rm --platform linux/arm64 debian:bullseye```
 
