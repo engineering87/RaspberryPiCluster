@@ -8,7 +8,7 @@ The azure-cli deb package does not support ARM64 architecture, so we need to use
 
 ```sudo usermod -aG docker pi```
 
-```sudo curl https://download.docker.com/linux/raspbian/gpg```
+reboot the system, than
 
 ```sudo curl https://download.docker.com/linux/raspbian/gpg```
 
