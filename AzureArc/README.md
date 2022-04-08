@@ -1,4 +1,4 @@
-The azure-cli deb package does not support ARM64 architecture, so we need to user **Docker** as a workaround.
+The azure-cli deb package does not support ARM64 architecture, so we need to user **Docker** as a workaround (https://github.com/Azure/azure-cli/issues/7368)
 
 ## Docker install
 
