@@ -24,6 +24,7 @@ Raspberry Pi OS operating system with Kernel 4 version is installed on all the b
 
 ### Current Projects and status
 
+* Azure Arc (work in progress)
 * Kubernetes (work in progress)
 * Ethereum (work in progress)
 * Dapr (work in progress)
