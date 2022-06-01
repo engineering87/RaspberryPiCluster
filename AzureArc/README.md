@@ -1,28 +1,30 @@
-The azure-cli deb package does not support ARM64 architecture, so we need to user **Docker** as a workaround (https://github.com/Azure/azure-cli/issues/7368)
+The azure-cli deb package does not support ARM64 architecture, the solution is to install azure-cli from PyPI as a workaround (https://github.com/Azure/azure-cli/issues/20476)
 
-## Docker install
+## Install Azure CLI with pip
 
-```sudo apt-get install apt-transport-https ca-certificates software-properties-common -y```
+Azure CLI is built on Python. The supported Python versions are 3.7 ~ 3.10.
 
-```curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh```
+Directly running pip install azure-cli installs Azure CLI system-wide and may cause conflicts with other Python libraries. Instead, we recommend installing Azure CLI in a virtual environment.
 
-```sudo usermod -aG docker pi```
+First make sure python3 and its related packages are installed:
 
-reboot the system, than
+### Ubuntu/Debian 
+```sudo apt install python3 python3-venv --yes```
 
-```sudo curl https://download.docker.com/linux/raspbian/gpg```
+Then continue the installation:
 
-```nano /etc/apt/sources.list```
+### Create a virtual environment 
+```python3 -m venv azure-cli-env```
 
-add the following line and save:   
+### Update pip 
+```azure-cli-env/bin/python -m pip install --upgrade pip```
 
-*deb https://download.docker.com/linux/raspbian/ stretch stable*
+### Install azure-cli 
+```azure-cli-env/bin/python -m pip install azure-cli```
 
-```sudo apt-get update```
+### Run any Azure CLI commands 
+```azure-cli-env/bin/az --version```
 
-```sudo apt-get upgrade```
+## Install arcdata extension
 
-## Azure CLI
-
-```sudo docker run -it --rm --platform linux/arm64 debian:bullseye```
-
+```azure-cli-env/bin/az extension add --name arcdata```
